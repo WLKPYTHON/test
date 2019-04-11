@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				colorchange();
+			}
+             function colorchange(){
+             	var r=parseInt(Math.random()*255);
+             	var g=parseInt(Math.random()*255);
+             	var b=parseInt(Math.random()*255);
+             	var rgb=r.toString(16)+g.toString(16)+b.toString(16);
+             	document.body.bgColor="#"+rgb;
+             	window.setTimeout("colorchange()",1000);
+             	
+             }
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

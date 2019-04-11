@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+    <script type="text/javascript">
+    	function table(row,col,width,height){
+    		this.row=row;
+    		this.col=col;
+    		this.width=width;
+    		this.height=height;
+    	}
+    	table.prototype.border=1;
+    	table.prototype.createtable=function(){
+    		var show="";
+    		show="<table align='center' border='"+this.border+"' width='"+this.width+"'>";
+    		var bgcolor;
+    		for(i=1;i<=this.row;i++){
+    			if(i%2 !=0){
+    				bgcolor="#FFFFFF";
+    			}else{
+    			    bgcolor="#DDDDDF";
+    			}
+    			show+="<tr bgcolor='"+bgcolor+"'>";
+    			for(j=1;j<=this.col;j++){
+    				show+="<td height='"+this.height+"'></td>";
+    			}
+    			show+="</tr>";
+    		}
+    		show+="</table>";
+          return show;
+    	}
+    	
+    </script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var table1=new table(5,3,600,20);
+			document.write(table1.createtable());
+            document.write("<p>");
+            var table2=new table(3,6,500,25);
+            document.write(table2.createtable());
+		</script>
+		
+	</body>
+</html>

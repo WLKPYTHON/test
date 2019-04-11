@@ -1,0 +1,47 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>应用自定义对象生成表格</title>
+<script type="text/javascript">
+function Table(row,col,width,height){
+	//设置对象的属性
+	this.row=row;
+	this.col=col;
+	this.width=width;
+	this.height=height;
+}
+Table.prototype.border=1;//为对象添加border属性
+Table.prototype.createtable=function(){//为对象添加createtable方法
+	var show = "";//声明变量并初始化
+	show = "<table align='center' border='"+this.border+"' width='"+this.width+"'>";	//定义要输出的字符串
+	var bgcolor;//声明变量
+	for(i=1;i<=this.row;i++){				//外层循环，输出表格的行
+		if(i%2 != 0){
+			bgcolor = "#FFFFFF";//如果是奇数行将行背景定义为白色
+		}else{
+			bgcolor = "#DDDDFF";//如果是偶数行将行背景定义为浅蓝色
+		}
+		show += "<tr bgcolor='"+bgcolor+"'>";				//连接字符串
+		for(j=1;j<=this.col;j++){			//内层循环，输出表格的列
+			show += "<td height='"+this.height+"'></td>";				//连接字符串
+		}
+		show += "</tr>";				//连接字符串
+	}
+	show += "</table>";					//连接字符串
+	return show;//返回变量的值
+}
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+var table1=new Table(5,3,600,20);//创建对象table1
+document.write(table1.createtable());//调用对象的方法
+document.write("<p>");//输出段落标记
+var table2=new Table(3,6,500,25);//创建对象table2
+document.write(table2.createtable());//调用对象的方法
+</script>
+</body>
+</html>

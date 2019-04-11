@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+*{margin: 0px; padding: 0px;}
+		.errorHint{position: absolute; left: 130px; top:-282px;}
+		.showError{border:1px solid red;}
+		table{ border: 2px solid #996c33; width: 550px; padding: 10px; margin: 150px auto; background:url(https://github.com/crystalYY/calculator/blob/master/img/bg2.jpg?raw=trueg) left center no-repeat; border-radius: 10px;}
+		table td{
+			text-align: center;
+			width: 100px;
+			height: 40px;
+			padding-left: 2px;
+			padding-bottom: 2px;
+		}
+		table th{
+			font-size: 18px;
+			font-family:'楷体';
+			color: 	#8B0000;
+		}
+		table td button{
+			width: 98%;
+			height: 98%;
+			font-size: 16px;
+			font-family: 'Microsoft yahei';
+			background: none;
+			color: 	#8B4726;
+			outline:none;
+			border:1px solid #000;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		table td input{
+			width: 100%;
+			margin: 10px 0;
+			padding: 5px;
+			border:1px solid #996c33;
+			box-sizing: border-box;						
+			text-align: right;
+			font-size: 16px;
+			font-family: 'Microsoft yahei';
+		}
+</style>
+</head>
+
+<body>
+	<div class="errorHint" id="errorHint"><img src="https://github.com/crystalYY/calculator/blob/master/img/error.png?raw=true"></div>
+	<table cellpadding="0">
+		<tr>
+			<th colspan="5">计算器</th>
+		</tr>
+		<tr>
+			<td colspan="5">
+				<input type="text" value="0" name="showResult">
+			</td>
+		</tr>
+		<tr>
+			<td><button>7</button></td>
+			<td><button>8</button></td>
+			<td><button>9</button></td>
+			<td><button class="setChange" id="backSpace">退格</button></td>
+			<td><button class="setChange" id="clearNum">C</button></td>
+		</tr>
+		<tr>
+			<td><button>4</button></td>
+			<td><button>5</button></td>
+			<td><button>6</button></td>
+			<td><button>+</button></td>
+			<td><button>-</button></td>
+		</tr>
+		<tr>
+			<td><button>1</button></td>
+			<td><button>2</button></td>
+			<td><button>3</button></td>
+			<td><button>*</button></td>
+			<td><button>/</button></td>
+		</tr>
+		<tr>
+			<td><button>0</button></td>
+			<td><button>.</button></td>
+			<td><button>%</button></td>
+			<td colspan="2"><button class="setChange" id="gainResult">Enter</button></td>
+		</tr>
+	</table>
+	<script type="text/javascript" src='index.js'>		
+	</script>
+
+</body>
+</html>
